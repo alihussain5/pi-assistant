@@ -12,7 +12,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
-    command: sh -c "ollama pull phi3:mini && ollama serve"
 
   hermes-agent:
     image: nousresearch/hermes-agent:latest
