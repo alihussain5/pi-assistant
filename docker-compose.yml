@@ -32,6 +32,7 @@ services:
     restart: unless-stopped
     stdin_open: true
     tty: true
+    command: gateway run
 
   portainer:
     image: portainer/portainer-ce:latest
