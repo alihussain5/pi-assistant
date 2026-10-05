@@ -22,8 +22,7 @@ services:
       - ./vault:/data/vault
       - ./hermes-profile:/root/.hermes
     depends_on:
-      ollama:
-        condition: service_healthy
+      - ollama
     restart: unless-stopped
 
   portainer:
