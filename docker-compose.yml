@@ -7,11 +7,6 @@ services:
     volumes:
       - ./ollama:/root/.ollama
     restart: unless-stopped
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
   hermes-agent:
     image: nousresearch/hermes-agent:latest
