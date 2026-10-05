@@ -24,6 +24,8 @@ services:
     depends_on:
       - ollama
     restart: unless-stopped
+    stdin_open: true
+    tty: true
 
   portainer:
     image: portainer/portainer-ce:latest
