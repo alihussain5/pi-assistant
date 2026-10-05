@@ -18,6 +18,8 @@ services:
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
       - TELEGRAM_ALLOWED_USERS=${TELEGRAM_ALLOWED_USERS}
       - VAULT_PATH=/data/vault
+      - HERMES_PROVIDER=ollama
+      - HERMES_MODEL=phi3:mini
     volumes:
       - ./vault:/data/vault
       - ./hermes-profile:/root/.hermes
