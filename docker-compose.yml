@@ -1,12 +1,12 @@
 services:
-  ollama:
-    image: ollama/ollama:latest
-    container_name: ollama
-    ports:
-      - "11434:11434"
-    volumes:
-      - ./ollama:/root/.ollama
-    restart: unless-stopped
+  # ollama:
+  #   image: ollama/ollama:latest
+  #   container_name: ollama
+  #   ports:
+  #     - "11434:11434"
+  #   volumes:
+  #     - ./ollama:/root/.ollama
+  #   restart: unless-stopped
 
   hermes-agent:
     image: nousresearch/hermes-agent:latest
@@ -16,19 +16,19 @@ services:
     env_file:
       - .env
     environment:
-      - OLLAMA_BASE_URL=http://ollama:11434
+      # - OLLAMA_BASE_URL=http://ollama:11434
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
       - TELEGRAM_ALLOWED_USERS=${TELEGRAM_ALLOWED_USERS}
       - VAULT_PATH=/data/vault
-      - HERMES_PROVIDER=ollama
-      - HERMES_MODEL=phi3:mini
+      # - HERMES_PROVIDER=ollama
+      # - HERMES_MODEL=phi3:mini
       - GATEWAY_ALLOW_ALL_USERS=false
       - GATEWAY_DOMAIN=localhost
     volumes:
       - ./vault:/data/vault
       - ./hermes-profile:/root/.hermes
-    depends_on:
-      - ollama
+    # depends_on:
+    #   - ollama
     restart: unless-stopped
     stdin_open: true
     tty: true
