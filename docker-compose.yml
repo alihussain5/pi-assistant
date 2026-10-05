@@ -22,6 +22,8 @@ services:
       - VAULT_PATH=/data/vault
       - HERMES_PROVIDER=ollama
       - HERMES_MODEL=phi3:mini
+      - GATEWAY_ALLOW_ALL_USERS=false
+      - GATEWAY_DOMAIN=localhost
     volumes:
       - ./vault:/data/vault
       - ./hermes-profile:/root/.hermes
