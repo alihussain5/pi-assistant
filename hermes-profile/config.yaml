@@ -1,2 +1,4 @@
-provider: ollama
+provider:
+  type: ollama
+  base_url: http://ollama:11434
 model: phi3:mini
